@@ -15,10 +15,12 @@
       };
       
       var v = getQueryString('v'); 
+      
+      document.getElementById("myURL").innerHTML = v;
     </script>
     
     
   </body>
   
-  <h1>"The URL is: " + v </h1>
+  <h1>The URL is: <span id="myURL"/> </h1>
 </html>
