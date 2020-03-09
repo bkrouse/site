@@ -1,26 +1,58 @@
 <html>
-  <body>
+<head>
     <script>
+
       /**
+
        * Get the value of a querystring
+
+       * @param  {String} url   The URL to get the value from 
+
        * @param  {String} field The field to get the value of
-       * @param  {String} url   The URL to get the value from (optional)
+
        * @return {String}       The field value
+
        */
-      var getQueryString = function ( field, url ) {
-        var href = url ? url : window.location.href;
+
+      var getQueryString = function ( url, field ) {
+
+ 
         var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
-        var string = reg.exec(href);
+
+        var string = reg.exec(url);
+
         return string ? string[1] : null;
+
       };
+
       
-      var v = getQueryString('v'); 
       
-      document.getElementById("myURL").innerHTML = v;
+
     </script>
+
+</head>
+
+  <body>
+
+
+<label for="fname">Enter Link:</label><br>
+<input type="text" size="60" id="link" name="link">
+<input type="button" value="clicky" onclick="javascript:window.location.href=window.location.protocol + window.location.hostname + window.location.pathname + '?v=' + getQueryString(document.getElementById('link').value, 'v')">
+
+<iframe width="760" height="515" id="player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
+
     
+
   </body>
-  
-  <h1>The URL is: <span id="myURL"/> </h1>
+
+<script>
+var v = getQueryString(window.location.href,'v'); 
+var theURL = "https://www.youtube.com/embed/" + v + "?rel=0&fs=1";
+document.getElementById('player').src = theURL;
+</script>
+
+
+
+
 </html>
