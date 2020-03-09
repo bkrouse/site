@@ -13,9 +13,11 @@
         var string = reg.exec(href);
         return string ? string[1] : null;
       };
+      
+      var v = getQueryString('v'); 
     </script>
     
-    var v = getQueryString('v'); // returns 'chicken'
+    
   </body>
   
   "The URL is: " + v;
