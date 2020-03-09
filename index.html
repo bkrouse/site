@@ -39,13 +39,7 @@
 <input type="text" size="60" id="link" name="link">
 <input type="button" value="clicky" onclick="javascript:document.location.href = window.location.protocol + '//' + window.location.hostname + window.location.pathname + '?v=' + getQueryString(document.getElementById('link').value, 'v')">
 
-
-      
-      <iframe width="760" height="515" id="player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
-<object width="760" height="515" id="player2" data=""
-width="760" height="515"/>
-
+<iframe width="760" height="515" id="player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
 
   </body>
@@ -54,7 +48,6 @@ width="760" height="515"/>
 var v = getQueryString(window.location.href,'v'); 
 var theURL = "https://www.youtube.com/embed/" + v + "?rel=0&fs=1";
 document.getElementById('player').src = theURL;
-    document.getElementById('player2').data = theURL;
 
 </script>
 
